@@ -1,0 +1,1624 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Template API",
+    "version": "0.0-alpha"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5001",
+      "description": "CurrentExecution Address1"
+    },
+    {
+      "url": "http://VeryLegitDevelopmentUrlHere",
+      "description": "Dev"
+    }
+  ],
+  "paths": {
+    "/api/v0-alpha/PlaylistOData": {
+      "get": {
+        "tags": [
+          "PlaylistOData"
+        ],
+        "description": "Requiered Autorizations =>\r\nDefault Authorization",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "SampleApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v0-alpha/Sample/SampleEndpointWithNoConfiguration": {
+      "get": {
+        "tags": [
+          "Sample"
+        ],
+        "summary": "UpdateAvailableShows",
+        "description": "Sample Description\r\nRequiered Autorizations =>\r\nDefault Authorization",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "SampleApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v0-alpha/Sample/SampleEndpointWithCustomPoliciesAndRoles": {
+      "get": {
+        "tags": [
+          "Sample"
+        ],
+        "summary": "UpdateAvailableShows",
+        "description": "Sample Description\r\nRequiered Autorizations =>\r\nPolicies: SamplePolicy, Other\r\nRoles: SampleRole, Others\r\n",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "SampleApiKey": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v0-alpha/Show": {
+      "get": {
+        "tags": [
+          "Show"
+        ],
+        "summary": "GetShowList",
+        "description": "Sample Description",
+        "parameters": [
+          {
+            "name": "showName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0-alpha/Show/asdas": {
+      "get": {
+        "tags": [
+          "Show"
+        ],
+        "summary": "GetShowList",
+        "description": "Sample Description",
+        "parameters": [
+          {
+            "name": "showName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=minimal": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=full": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.metadata=none": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=true": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json;odata.streaming=false": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Show"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0-alpha/Show/AltGet": {
+      "get": {
+        "tags": [
+          "Show"
+        ],
+        "summary": "GetShowList",
+        "description": "Sample Description",
+        "parameters": [
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ShowTempColumnsOrderBy"
+              }
+            }
+          },
+          {
+            "name": "Includes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ShowTempIncludes"
+              }
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "IdMax",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "IdMin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "OnEmision",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NameComparationType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/StringComparationType"
+            }
+          },
+          {
+            "name": "RuntimeMax",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "RuntimeMin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PremieredMax",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "PremieredMin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=minimal": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=full": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.metadata=none": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.streaming=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json;odata.streaming=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowTempPage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0-alpha/Show/update": {
+      "post": {
+        "tags": [
+          "Show"
+        ],
+        "summary": "UpdateAvailableShows",
+        "description": "Sample Description\r\nRequiered Autorizations =>\r\nDefault Authorization",
+        "parameters": [
+          {
+            "name": "startingIdInclusive",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "endingIdExclusive",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 6
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "SampleApiKey": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Country": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryNetworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CountryNetwork"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CountryNetwork": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "networkId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "countryId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Day": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "scheduleDays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleDay"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Episode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "showLinkPrevious": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowLink"
+            },
+            "nullable": true
+          },
+          "showLinkSelves": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowLink"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "External": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "showExternals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowExternal"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Genere": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "showGeneres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowGenere"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "medium": {
+            "type": "string",
+            "nullable": true
+          },
+          "original": {
+            "type": "string",
+            "nullable": true
+          },
+          "showImages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowImage"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Kind": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "showKinds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowKind"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Language": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "showLanguages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowLanguage"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Network": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "officialSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryNetworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CountryNetwork"
+            },
+            "nullable": true
+          },
+          "showNetworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowNetwork"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDirection": {
+        "enum": [
+          "Ascending",
+          "Descending"
+        ],
+        "type": "string"
+      },
+      "ScheduleDay": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showScheduleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "dayId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "day": {
+            "$ref": "#/components/schemas/Day"
+          },
+          "showSchedule": {
+            "$ref": "#/components/schemas/ShowSchedule"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Show": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "runtime": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "averageRuntime": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "premiered": {
+            "type": "string",
+            "nullable": true
+          },
+          "ended": {
+            "type": "string",
+            "nullable": true
+          },
+          "officialSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          },
+          "updated": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "showExternals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowExternal"
+            },
+            "nullable": true
+          },
+          "showGeneres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowGenere"
+            },
+            "nullable": true
+          },
+          "showImages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowImage"
+            },
+            "nullable": true
+          },
+          "showKinds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowKind"
+            },
+            "nullable": true
+          },
+          "showLanguages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowLanguage"
+            },
+            "nullable": true
+          },
+          "showLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowLink"
+            },
+            "nullable": true
+          },
+          "showNetworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowNetwork"
+            },
+            "nullable": true
+          },
+          "showRatings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowRating"
+            },
+            "nullable": true
+          },
+          "showSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowSchedule"
+            },
+            "nullable": true
+          },
+          "showStatuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowStatus"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowExternal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "externalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "external": {
+            "$ref": "#/components/schemas/External"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowGenere": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "genereId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "genere": {
+            "$ref": "#/components/schemas/Genere"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "imageId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "image": {
+            "$ref": "#/components/schemas/Image"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowKind": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "kindId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/Kind"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowLanguage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "languageId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "language": {
+            "$ref": "#/components/schemas/Language"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowLink": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "selfId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "previousId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "previous": {
+            "$ref": "#/components/schemas/Episode"
+          },
+          "self": {
+            "$ref": "#/components/schemas/Episode"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowNetwork": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "networkId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowRating": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "average": {
+            "type": "number",
+            "format": "double"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowSchedule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "time": {
+            "type": "string",
+            "nullable": true
+          },
+          "scheduleDays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleDay"
+            },
+            "nullable": true
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowStatus": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "showId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "statusId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "show": {
+            "$ref": "#/components/schemas/Show"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowTemp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "onEmision": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "runtime": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "premiered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleDay"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowTempColumns": {
+        "enum": [
+          "Id",
+          "OnEmision",
+          "Name",
+          "Runtime",
+          "Premiered"
+        ],
+        "type": "string"
+      },
+      "ShowTempColumnsOrderBy": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "$ref": "#/components/schemas/OrderDirection"
+          },
+          "column": {
+            "$ref": "#/components/schemas/ShowTempColumns"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShowTempIncludes": {
+        "enum": [
+          "Schedules"
+        ],
+        "type": "string"
+      },
+      "ShowTempPage": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowTemp"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "showStatuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShowStatus"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringComparationType": {
+        "enum": [
+          "Equals",
+          "StartsWith",
+          "Contains",
+          "EndsWith"
+        ],
+        "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "SampleApiKey": {
+        "type": "apiKey",
+        "name": "CustomAuth",
+        "in": "header"
+      }
+    }
+  }
+}
