@@ -15,7 +15,6 @@
 
 package aruppi.client.model
 
-import aruppi.client.model.Show
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,26 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param showId 
- * @param average 
- * @param show 
+ * @param malId 
+ * @param title 
+ * @param image 
  */
 
 
-data class ShowRating (
+data class ScheduleSlim (
 
-    @Json(name = "id")
-    val id: java.util.UUID? = null,
+    @Json(name = "malId")
+    val malId: kotlin.Long? = null,
 
-    @Json(name = "showId")
-    val showId: java.util.UUID? = null,
+    @Json(name = "title")
+    val title: kotlin.String? = null,
 
-    @Json(name = "average")
-    val average: kotlin.Double? = null,
-
-    @Json(name = "show")
-    val show: Show? = null
+    @Json(name = "image")
+    val image: kotlin.String? = null
 
 )
 

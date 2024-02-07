@@ -1,6 +1,7 @@
 package org.example
 
-import aruppi.api.client.api.ShowApi
+import aruppi.client.api.SchedulesApi
+import aruppi.client.model.Days
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,7 +17,7 @@ fun main() {
         println("i = $i")
     }
 
-    val test = ShowApi()
+    val test = SchedulesApi()
 
-    val result = test.apiV0AlphaShowGet()
+    val result = test.apiV0AlphaSchedulesGet(Days.Friday)
 }

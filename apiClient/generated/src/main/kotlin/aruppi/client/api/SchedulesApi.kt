@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import aruppi.client.model.Show
+import aruppi.client.model.Days
+import aruppi.client.model.ScheduleSlim
 
 import com.squareup.moshi.Json
 
@@ -37,7 +38,7 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
-class PlaylistODataApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class SchedulesApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -46,16 +47,15 @@ class PlaylistODataApi(basePath: kotlin.String = defaultBasePath, client: OkHttp
     }
 
     /**
+     * GetSchedulesFilteredByDayOfWeek
      * 
-     * Requiered Autorizations &#x3D;&gt;  Default Authorization
-     * @param select  (optional)
-     * @param expand  (optional)
-     * @param filter  (optional)
-     * @param orderby  (optional)
-     * @param top  (optional)
-     * @param skip  (optional)
-     * @param count  (optional)
-     * @return kotlin.collections.List<Show>
+     * @param day  (optional)
+     * @param kids  (optional)
+     * @param sfw  (optional)
+     * @param unapproved  (optional)
+     * @param page  (optional)
+     * @param limit  (optional)
+     * @return kotlin.collections.List<ScheduleSlim>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -64,11 +64,11 @@ class PlaylistODataApi(basePath: kotlin.String = defaultBasePath, client: OkHttp
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV0AlphaPlaylistODataGet(select: kotlin.String? = null, expand: kotlin.String? = null, filter: kotlin.String? = null, orderby: kotlin.String? = null, top: kotlin.Int? = null, skip: kotlin.Int? = null, count: kotlin.Boolean? = null) : kotlin.collections.List<Show> {
-        val localVarResponse = apiV0AlphaPlaylistODataGetWithHttpInfo(select = select, expand = expand, filter = filter, orderby = orderby, top = top, skip = skip, count = count)
+    fun apiV0AlphaSchedulesGet(day: Days? = null, kids: kotlin.Boolean? = null, sfw: kotlin.Boolean? = null, unapproved: kotlin.Boolean? = null, page: kotlin.Int? = null, limit: kotlin.Int? = null) : kotlin.collections.List<ScheduleSlim> {
+        val localVarResponse = apiV0AlphaSchedulesGetWithHttpInfo(day = day, kids = kids, sfw = sfw, unapproved = unapproved, page = page, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Show>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ScheduleSlim>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -83,76 +83,71 @@ class PlaylistODataApi(basePath: kotlin.String = defaultBasePath, client: OkHttp
     }
 
     /**
+     * GetSchedulesFilteredByDayOfWeek
      * 
-     * Requiered Autorizations &#x3D;&gt;  Default Authorization
-     * @param select  (optional)
-     * @param expand  (optional)
-     * @param filter  (optional)
-     * @param orderby  (optional)
-     * @param top  (optional)
-     * @param skip  (optional)
-     * @param count  (optional)
-     * @return ApiResponse<kotlin.collections.List<Show>?>
+     * @param day  (optional)
+     * @param kids  (optional)
+     * @param sfw  (optional)
+     * @param unapproved  (optional)
+     * @param page  (optional)
+     * @param limit  (optional)
+     * @return ApiResponse<kotlin.collections.List<ScheduleSlim>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV0AlphaPlaylistODataGetWithHttpInfo(select: kotlin.String?, expand: kotlin.String?, filter: kotlin.String?, orderby: kotlin.String?, top: kotlin.Int?, skip: kotlin.Int?, count: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<Show>?> {
-        val localVariableConfig = apiV0AlphaPlaylistODataGetRequestConfig(select = select, expand = expand, filter = filter, orderby = orderby, top = top, skip = skip, count = count)
+    fun apiV0AlphaSchedulesGetWithHttpInfo(day: Days?, kids: kotlin.Boolean?, sfw: kotlin.Boolean?, unapproved: kotlin.Boolean?, page: kotlin.Int?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<ScheduleSlim>?> {
+        val localVariableConfig = apiV0AlphaSchedulesGetRequestConfig(day = day, kids = kids, sfw = sfw, unapproved = unapproved, page = page, limit = limit)
 
-        return request<Unit, kotlin.collections.List<Show>>(
+        return request<Unit, kotlin.collections.List<ScheduleSlim>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiV0AlphaPlaylistODataGet
+     * To obtain the request config of the operation apiV0AlphaSchedulesGet
      *
-     * @param select  (optional)
-     * @param expand  (optional)
-     * @param filter  (optional)
-     * @param orderby  (optional)
-     * @param top  (optional)
-     * @param skip  (optional)
-     * @param count  (optional)
+     * @param day  (optional)
+     * @param kids  (optional)
+     * @param sfw  (optional)
+     * @param unapproved  (optional)
+     * @param page  (optional)
+     * @param limit  (optional)
      * @return RequestConfig
      */
-    fun apiV0AlphaPlaylistODataGetRequestConfig(select: kotlin.String?, expand: kotlin.String?, filter: kotlin.String?, orderby: kotlin.String?, top: kotlin.Int?, skip: kotlin.Int?, count: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun apiV0AlphaSchedulesGetRequestConfig(day: Days?, kids: kotlin.Boolean?, sfw: kotlin.Boolean?, unapproved: kotlin.Boolean?, page: kotlin.Int?, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (select != null) {
-                    put("select", listOf(select.toString()))
+                if (day != null) {
+                    put("Day", listOf(day.toString()))
                 }
-                if (expand != null) {
-                    put("expand", listOf(expand.toString()))
+                if (kids != null) {
+                    put("Kids", listOf(kids.toString()))
                 }
-                if (filter != null) {
-                    put("filter", listOf(filter.toString()))
+                if (sfw != null) {
+                    put("Sfw", listOf(sfw.toString()))
                 }
-                if (orderby != null) {
-                    put("orderby", listOf(orderby.toString()))
+                if (unapproved != null) {
+                    put("Unapproved", listOf(unapproved.toString()))
                 }
-                if (top != null) {
-                    put("top", listOf(top.toString()))
+                if (page != null) {
+                    put("Page", listOf(page.toString()))
                 }
-                if (skip != null) {
-                    put("skip", listOf(skip.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
+                if (limit != null) {
+                    put("Limit", listOf(limit.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/octet-stream"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/api/v0-alpha/PlaylistOData",
+            path = "/api/v0-alpha/Schedules",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = true,
+            requiresAuthentication = false,
             body = localVariableBody
         )
     }

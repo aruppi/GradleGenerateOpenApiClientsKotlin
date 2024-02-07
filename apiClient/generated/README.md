@@ -44,48 +44,14 @@ All URIs are relative to *http://localhost:5001*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PlaylistODataApi* | [**apiV0AlphaPlaylistODataGet**](docs/PlaylistODataApi.md#apiv0alphaplaylistodataget) | **GET** /api/v0-alpha/PlaylistOData | 
-*SampleApi* | [**apiV0AlphaSampleSampleEndpointWithCustomPoliciesAndRolesGet**](docs/SampleApi.md#apiv0alphasamplesampleendpointwithcustompoliciesandrolesget) | **GET** /api/v0-alpha/Sample/SampleEndpointWithCustomPoliciesAndRoles | UpdateAvailableShows
-*SampleApi* | [**apiV0AlphaSampleSampleEndpointWithNoConfigurationGet**](docs/SampleApi.md#apiv0alphasamplesampleendpointwithnoconfigurationget) | **GET** /api/v0-alpha/Sample/SampleEndpointWithNoConfiguration | UpdateAvailableShows
-*ShowApi* | [**apiV0AlphaShowAltGetGet**](docs/ShowApi.md#apiv0alphashowaltgetget) | **GET** /api/v0-alpha/Show/AltGet | GetShowList
-*ShowApi* | [**apiV0AlphaShowAsdasGet**](docs/ShowApi.md#apiv0alphashowasdasget) | **GET** /api/v0-alpha/Show/asdas | GetShowList
-*ShowApi* | [**apiV0AlphaShowGet**](docs/ShowApi.md#apiv0alphashowget) | **GET** /api/v0-alpha/Show | GetShowList
-*ShowApi* | [**apiV0AlphaShowUpdatePost**](docs/ShowApi.md#apiv0alphashowupdatepost) | **POST** /api/v0-alpha/Show/update | UpdateAvailableShows
+*SchedulesApi* | [**apiV0AlphaSchedulesGet**](docs/SchedulesApi.md#apiv0alphaschedulesget) | **GET** /api/v0-alpha/Schedules | GetSchedulesFilteredByDayOfWeek
 
 
 <a id="documentation-for-models"></a>
 ## Documentation for Models
 
- - [aruppi.client.model.Country](docs/Country.md)
- - [aruppi.client.model.CountryNetwork](docs/CountryNetwork.md)
- - [aruppi.client.model.Day](docs/Day.md)
- - [aruppi.client.model.Episode](docs/Episode.md)
- - [aruppi.client.model.External](docs/External.md)
- - [aruppi.client.model.Genere](docs/Genere.md)
- - [aruppi.client.model.Image](docs/Image.md)
- - [aruppi.client.model.Kind](docs/Kind.md)
- - [aruppi.client.model.Language](docs/Language.md)
- - [aruppi.client.model.Network](docs/Network.md)
- - [aruppi.client.model.OrderDirection](docs/OrderDirection.md)
- - [aruppi.client.model.ScheduleDay](docs/ScheduleDay.md)
- - [aruppi.client.model.Show](docs/Show.md)
- - [aruppi.client.model.ShowExternal](docs/ShowExternal.md)
- - [aruppi.client.model.ShowGenere](docs/ShowGenere.md)
- - [aruppi.client.model.ShowImage](docs/ShowImage.md)
- - [aruppi.client.model.ShowKind](docs/ShowKind.md)
- - [aruppi.client.model.ShowLanguage](docs/ShowLanguage.md)
- - [aruppi.client.model.ShowLink](docs/ShowLink.md)
- - [aruppi.client.model.ShowNetwork](docs/ShowNetwork.md)
- - [aruppi.client.model.ShowRating](docs/ShowRating.md)
- - [aruppi.client.model.ShowSchedule](docs/ShowSchedule.md)
- - [aruppi.client.model.ShowStatus](docs/ShowStatus.md)
- - [aruppi.client.model.ShowTemp](docs/ShowTemp.md)
- - [aruppi.client.model.ShowTempColumns](docs/ShowTempColumns.md)
- - [aruppi.client.model.ShowTempColumnsOrderBy](docs/ShowTempColumnsOrderBy.md)
- - [aruppi.client.model.ShowTempIncludes](docs/ShowTempIncludes.md)
- - [aruppi.client.model.ShowTempPage](docs/ShowTempPage.md)
- - [aruppi.client.model.Status](docs/Status.md)
- - [aruppi.client.model.StringComparationType](docs/StringComparationType.md)
+ - [aruppi.client.model.Days](docs/Days.md)
+ - [aruppi.client.model.ScheduleSlim](docs/ScheduleSlim.md)
 
 
 <a id="documentation-for-authorization"></a>

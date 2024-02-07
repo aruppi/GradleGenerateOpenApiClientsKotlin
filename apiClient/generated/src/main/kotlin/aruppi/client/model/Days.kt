@@ -13,7 +13,7 @@
     "UnusedImport"
 )
 
-package aruppi.api.client.model
+package aruppi.client.model
 
 
 import com.squareup.moshi.Json
@@ -22,23 +22,38 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: Equals,StartsWith,Contains,EndsWith
+ * Values: Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Unknown,Other
  */
 
 @JsonClass(generateAdapter = false)
-enum class StringComparationType(val value: kotlin.String) {
+enum class Days(val value: kotlin.String) {
 
-    @Json(name = "Equals")
-    Equals("Equals"),
+    @Json(name = "Monday")
+    Monday("Monday"),
 
-    @Json(name = "StartsWith")
-    StartsWith("StartsWith"),
+    @Json(name = "Tuesday")
+    Tuesday("Tuesday"),
 
-    @Json(name = "Contains")
-    Contains("Contains"),
+    @Json(name = "Wednesday")
+    Wednesday("Wednesday"),
 
-    @Json(name = "EndsWith")
-    EndsWith("EndsWith");
+    @Json(name = "Thursday")
+    Thursday("Thursday"),
+
+    @Json(name = "Friday")
+    Friday("Friday"),
+
+    @Json(name = "Saturday")
+    Saturday("Saturday"),
+
+    @Json(name = "Sunday")
+    Sunday("Sunday"),
+
+    @Json(name = "Unknown")
+    Unknown("Unknown"),
+
+    @Json(name = "Other")
+    Other("Other");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -53,12 +68,12 @@ enum class StringComparationType(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is StringComparationType) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is Days) "$data" else null
 
         /**
-         * Returns a valid [StringComparationType] for [data], null otherwise.
+         * Returns a valid [Days] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): StringComparationType? = data?.let {
+        fun decode(data: kotlin.Any?): Days? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()
